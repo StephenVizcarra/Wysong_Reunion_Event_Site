@@ -1,0 +1,1027 @@
+/* =====================================================
+   WYSONG FAMILY REUNION — STYLES
+   Color palette derived from the Weissang 1550 family crest
+   ===================================================== */
+
+:root {
+  --blue-dark: #0F2444;
+  --blue: #1B3A6B;
+  --blue-light: #2C5AA0;
+  --blue-pale: #E8EEF6;
+  --gold: #D4A017;
+  --gold-dark: #B8890F;
+  --gold-light: #F0D060;
+  --silver: #E8E8E8;
+  --white: #FFFFFF;
+  --text-dark: #1A1A2E;
+  --text-muted: #6B7280;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 24px rgba(0, 0, 0, 0.12);
+  --radius: 8px;
+  --nav-height: 64px;
+  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-heading: Georgia, "Times New Roman", serif;
+}
+
+/* ---- RESET ---- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: var(--white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--blue-light);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none !important;
+}
+
+
+/* ---- NAVIGATION ---- */
+
+#main-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--blue-dark);
+  box-shadow: var(--shadow);
+  height: var(--nav-height);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.nav-logo {
+  color: var(--gold);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-logo:hover {
+  text-decoration: none;
+  color: var(--gold-light);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-links a {
+  color: var(--white);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--gold);
+}
+
+/* Hamburger toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* ---- LAYOUT ---- */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.section h2 {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  color: var(--blue);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+}
+
+.section-alt {
+  background: var(--blue-pale);
+}
+
+.section-blue {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.section-blue h2 {
+  color: var(--gold);
+}
+
+
+/* ---- HERO ---- */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("../images/hero-farmland.jpg") center/cover no-repeat;
+  padding-top: var(--nav-height);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 36, 68, 0.85) 0%,
+    rgba(27, 58, 107, 0.75) 50%,
+    rgba(15, 36, 68, 0.9) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.hero-crest {
+  width: 400px;
+  height: auto;
+  margin: 0 auto 1.5rem;
+  border-radius: var(--radius);
+  border: 3px solid var(--gold);
+  box-shadow: var(--shadow-lg);
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-tagline {
+  font-size: 1.35rem;
+  color: var(--gold);
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.hero-dates {
+  font-size: 1.15rem;
+  color: var(--silver);
+  margin-bottom: 2rem;
+}
+
+
+/* ---- BUTTONS ---- */
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  text-decoration: none;
+  text-align: center;
+  font-family: var(--font-body);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--blue-dark);
+  border-color: var(--gold);
+}
+
+.btn-gold:hover {
+  background: var(--gold-dark);
+  border-color: var(--gold-dark);
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.btn-outline:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.btn-large {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: var(--blue-light);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0;
+}
+
+.link-button:hover {
+  color: var(--blue);
+}
+
+
+/* ---- ABOUT ---- */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.about-image img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+
+/* ---- SCHEDULE ---- */
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.schedule-day {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border-left: 4px solid var(--gold);
+}
+
+.schedule-day h3 {
+  color: var(--gold);
+  font-family: var(--font-heading);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.schedule-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-time {
+  font-weight: 600;
+  color: var(--gold-light);
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.schedule-title {
+  color: var(--white);
+}
+
+
+/* ---- SECTION DIVIDER ---- */
+
+.section-divider {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 36, 68, 0.2) 0%,
+    rgba(15, 36, 68, 0.4) 100%
+  );
+}
+
+
+/* ---- REGISTRATION ---- */
+
+.registration-info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.deadline-banner {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--blue-dark);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius);
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+#registration-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: 1px solid var(--silver);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+legend {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--blue);
+  padding: 0 0.5rem;
+  font-weight: 700;
+}
+
+.fieldset-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.span-2 {
+  grid-column: span 2;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.form-group .required {
+  color: #c0392b;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+select {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--blue-light);
+  box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.15);
+}
+
+input[type="number"] {
+  width: 80px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 0.25rem;
+}
+
+.radio-label {
+  font-weight: 400 !important;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+
+/* ---- ADDITIONAL NAMES ---- */
+
+.additional-names-section .fieldset-note {
+  margin-bottom: 0.5rem;
+}
+
+#additional-names-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.additional-name-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.additional-name-row input {
+  flex: 1;
+}
+
+.btn-remove-name {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #c0392b;
+  cursor: pointer;
+  font-size: 1.1rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+  font-family: var(--font-body);
+}
+
+.btn-remove-name:hover {
+  background: #fde8e8;
+  border-color: #c0392b;
+}
+
+.btn-add-name {
+  background: none;
+  border: 1px dashed var(--blue-light);
+  border-radius: var(--radius);
+  color: var(--blue-light);
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-add-name:hover {
+  background: var(--blue-pale);
+  color: var(--blue);
+}
+
+
+/* ---- EVENT ROWS ---- */
+
+.event-row {
+  background: var(--blue-pale);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.event-header h4 {
+  color: var(--blue);
+  margin-bottom: 0.25rem;
+}
+
+.event-inputs {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-end;
+}
+
+.event-input-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.event-rate {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.event-subtotal-line {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-left: auto;
+  padding-top: 0.5rem;
+}
+
+.grand-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--blue);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  margin-top: 1rem;
+  font-size: 1.15rem;
+}
+
+.grand-total-amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+
+/* ---- PAYMENT FIELDSET ---- */
+
+.payment-fieldset .payment-details {
+  line-height: 1.8;
+}
+
+.payment-fieldset address {
+  font-style: normal;
+  background: var(--blue-pale);
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  white-space: pre-line;
+}
+
+
+/* ---- FORM ACTIONS ---- */
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+
+/* ---- FORM SUCCESS ---- */
+
+.form-success {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #27ae60;
+  color: var(--white);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.form-success h3 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--blue);
+  margin-bottom: 0.75rem;
+}
+
+.form-success p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+
+/* ---- TEXT HELPERS ---- */
+
+.text-muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+
+/* ---- CARDS (Lodging, Contacts) ---- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  border-top: 4px solid var(--gold);
+}
+
+.card h3 {
+  font-family: var(--font-heading);
+  color: var(--blue);
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.card .card-label {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.card .card-note {
+  margin-top: 0.75rem;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+
+/* ---- GETTING THERE ---- */
+
+.getting-there-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.directions-text p {
+  line-height: 1.8;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+
+/* ---- FOOTER ---- */
+
+footer {
+  background: var(--blue-dark);
+  color: var(--silver);
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+
+
+/* ---- PRINT HEADER (hidden on screen) ---- */
+
+.print-header {
+  display: none;
+}
+
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--blue-dark);
+    flex-direction: column;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+  }
+
+  .hero-crest {
+    width: 280px;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section h2 {
+    font-size: 1.75rem;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-image {
+    order: -1;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.span-2 {
+    grid-column: span 1;
+  }
+
+  .event-inputs {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .event-subtotal-line {
+    margin-left: 0;
+  }
+
+  .grand-total-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .getting-there-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .section-divider {
+    height: 200px;
+    background-attachment: scroll;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  /* Hide non-form elements */
+  #main-nav,
+  .hero,
+  #about,
+  #schedule,
+  .section-divider,
+  #lodging,
+  #getting-there,
+  #contact,
+  footer,
+  .registration-info,
+  .form-actions,
+  #form-success,
+  #registration-closed,
+  .btn,
+  .link-button {
+    display: none !important;
+  }
+
+  /* Show print header */
+  .print-header {
+    display: block !important;
+    text-align: center;
+    padding: 1rem 0 0.5rem;
+    border-bottom: 3px solid #000;
+    margin-bottom: 1rem;
+  }
+
+  .print-header h1 {
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .print-header p {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  /* Reset section styling */
+  #registration {
+    padding: 0 !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+  }
+
+  /* Form styling for print */
+  #registration-form {
+    max-width: 100%;
+  }
+
+  fieldset {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  legend {
+    font-size: 1.1rem;
+    color: #000;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="number"],
+  select {
+    border: none;
+    border-bottom: 1px solid #000;
+    border-radius: 0;
+    padding: 0.25rem 0;
+    background: transparent;
+    box-shadow: none;
+    min-width: 150px;
+  }
+
+  input[type="number"] {
+    min-width: 60px;
+    width: 60px;
+  }
+
+  .event-row {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+  }
+
+  .grand-total-row {
+    background: none;
+    color: #000;
+    border: 2px solid #000;
+    padding: 0.75rem;
+  }
+
+  .grand-total-amount {
+    color: #000;
+  }
+
+  .deadline-banner {
+    background: none;
+    color: #000;
+    border: 1px solid #000;
+  }
+
+  .payment-fieldset address {
+    background: none;
+    border: 1px solid #ccc;
+  }
+
+  /* Hide honeypot */
+  .hidden {
+    display: none !important;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .section-subtitle {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+  }
+
+}

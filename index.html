@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wysong Family Reunion 2027 — Lancaster, PA</title>
+  <meta name="description" content="Wysong Family Reunion 2027 in Lancaster, PA. Register, view the schedule, and find lodging and travel information.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#x1F3E1;</text></svg>">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="main-nav">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">Wysong Family Reunion</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#registration">Register</a></li>
+        <li><a href="#lodging">Lodging</a></li>
+        <li><a href="#getting-there">Getting There</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="images/crest.jpg" alt="Wysong Family Crest — Weissang 1550" class="hero-crest">
+      <h1 id="hero-title">Wysong Family Reunion 2027</h1>
+      <p id="hero-tagline" class="hero-tagline">Lancaster, PA</p>
+      <p id="hero-dates" class="hero-dates">Dates TBD</p>
+      <a href="#registration" class="btn btn-gold">Register Now</a>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About the Reunion</h2>
+      <div class="about-layout">
+        <div class="about-text">
+          <p id="about-text"></p>
+        </div>
+        <div class="about-image">
+          <img src="images/lancaster-sunset.jpg" alt="Lancaster, Pennsylvania" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCHEDULE ===== -->
+  <section id="schedule" class="section section-blue">
+    <div class="container">
+      <h2>Schedule</h2>
+      <div id="schedule-content" class="schedule-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== REGISTRATION ===== -->
+  <section id="registration" class="section">
+    <div class="container">
+      <h2>Wysong Family Reunion — Event Registration</h2>
+      <p class="section-subtitle">Lancaster, PA 2027</p>
+
+      <div id="registration-open">
+        <div class="registration-info">
+          <p>Register online below, or
+            <button type="button" class="link-button" onclick="window.print()">print this form</button>
+            and mail it in with your check.</p>
+          <p class="deadline-banner">
+            Registration &amp; payment deadline: <strong id="reg-deadline"></strong>
+          </p>
+        </div>
+
+        <form id="registration-form" name="registration" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="registration">
+          <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+          <!-- Personal Information -->
+          <fieldset>
+            <legend>Personal Information</legend>
+            <div class="form-grid">
+              <div class="form-group span-2">
+                <label for="full-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="full-name" name="full-name" required autocomplete="name">
+                <div id="additional-names-list"></div>
+                <button type="button" class="btn-add-name" id="add-name-btn">+ Add Another Name</button>
+                <input type="hidden" name="additional-names" id="additional-names-hidden" value="">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
+              <div class="form-group span-2">
+                <label for="address">Street Address</label>
+                <input type="text" id="address" name="address" autocomplete="street-address">
+              </div>
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" autocomplete="address-level2">
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" autocomplete="address-level1">
+              </div>
+              <div class="form-group">
+                <label for="zip">ZIP Code</label>
+                <input type="text" id="zip" name="zip" autocomplete="postal-code">
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Family Information -->
+          <fieldset>
+            <legend>Family Information</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Is this your first reunion?</label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="first-reunion" value="Yes"> Yes
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="first-reunion" value="No"> No
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="descendant-of">Descendant of</label>
+                <select id="descendant-of" name="descendant-of">
+                  <option value="">— Select —</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Event Registration -->
+          <fieldset id="events-fieldset">
+            <legend>Event Registration</legend>
+            <p class="fieldset-note">Select the number of attendees for each event. Payment by check only.</p>
+
+            <div id="events-container">
+              <p id="no-events-msg" class="text-muted">Event details and pricing coming soon. Check back for updates!</p>
+
+              <!-- Event 1 -->
+              <div class="event-row" data-event-index="0" style="display:none;">
+                <div class="event-header">
+                  <h4 class="event-name"></h4>
+                  <p class="event-description text-muted"></p>
+                </div>
+                <div class="event-inputs">
+                  <div class="event-input-group">
+                    <label>Number of Adults
+                      <input type="number" name="event-1-adults" min="0" value="0" class="event-qty">
+                    </label>
+                    <span class="event-rate adult-rate"></span>
+                  </div>
+                  <div class="event-input-group children-group" style="display:none;">
+                    <label>Number of Children
+                      <input type="number" name="event-1-children" min="0" value="0" class="event-qty">
+                    </label>
+                    <span class="event-rate child-rate"></span>
+                  </div>
+                  <div class="event-subtotal-line">
+                    Subtotal: $<span class="subtotal-display">0.00</span>
+                    <input type="hidden" name="event-1-subtotal" class="subtotal-input" value="0.00">
+                    <input type="hidden" name="event-1-name" class="event-name-input" value="">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Event 2 -->
+              <div class="event-row" data-event-index="1" style="display:none;">
+                <div class="event-header">
+                  <h4 class="event-name"></h4>
+                  <p class="event-description text-muted"></p>
+                </div>
+                <div class="event-inputs">
+                  <div class="event-input-group">
+                    <label>Number of Adults
+                      <input type="number" name="event-2-adults" min="0" value="0" class="event-qty">
+                    </label>
+                    <span class="event-rate adult-rate"></span>
+                  </div>
+                  <div class="event-input-group children-group" style="display:none;">
+                    <label>Number of Children
+                      <input type="number" name="event-2-children" min="0" value="0" class="event-qty">
+                    </label>
+                    <span class="event-rate child-rate"></span>
+                  </div>
+                  <div class="event-subtotal-line">
+                    Subtotal: $<span class="subtotal-display">0.00</span>
+                    <input type="hidden" name="event-2-subtotal" class="subtotal-input" value="0.00">
+                    <input type="hidden" name="event-2-name" class="event-name-input" value="">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Event 3 -->
+              <div class="event-row" data-event-index="2" style="display:none;">
+                <div class="event-header">
+                  <h4 class="event-name"></h4>
+                  <p class="event-description text-muted"></p>
+                </div>
+                <div class="event-inputs">
+                  <div class="event-input-group">
+                    <label>Number of Adults
+                      <input type="number" name="event-3-adults" min="0" value="0" class="event-qty">
+                    </label>
+                    <span class="event-rate adult-rate"></span>
+                  </div>
+                  <div class="event-input-group children-group" style="display:none;">
+                    <label>Number of Children
+                      <input type="number" name="event-3-children" min="0" value="0" class="event-qty">
+                    </label>
+                    <span class="event-rate child-rate"></span>
+                  </div>
+                  <div class="event-subtotal-line">
+                    Subtotal: $<span class="subtotal-display">0.00</span>
+                    <input type="hidden" name="event-3-subtotal" class="subtotal-input" value="0.00">
+                    <input type="hidden" name="event-3-name" class="event-name-input" value="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Grand Total -->
+            <div id="grand-total-row" class="grand-total-row" style="display:none;">
+              <span>Total Amount to Enclose by Check:</span>
+              <span class="grand-total-amount">$<span id="grand-total-display">0.00</span></span>
+              <input type="hidden" name="grand-total" id="grand-total-input" value="0.00">
+            </div>
+          </fieldset>
+
+          <!-- Payment Info -->
+          <fieldset class="payment-fieldset">
+            <legend>Payment</legend>
+            <div class="payment-details">
+              <p>Make check payable to: <strong id="check-payable"></strong></p>
+              <p>Mail check and/or paper form to:</p>
+              <address id="mail-address"></address>
+              <p>Must be received by: <strong id="payment-deadline"></strong></p>
+            </div>
+          </fieldset>
+
+          <!-- Actions -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-gold btn-large">Submit Registration</button>
+            <button type="button" class="btn btn-outline" onclick="window.print()">Print Registration Form</button>
+          </div>
+        </form>
+
+        <!-- Success message -->
+        <div id="form-success" class="form-success" style="display:none;">
+          <div class="success-icon">&#10003;</div>
+          <h3>Registration Received!</h3>
+          <p>Thank you for registering. Please remember to mail your check before the deadline.</p>
+          <a href="#home" class="btn btn-gold">Back to Top</a>
+        </div>
+      </div>
+
+      <!-- Registration closed message -->
+      <div id="registration-closed" style="display:none;">
+        <p class="text-muted">Online registration is currently closed. Please contact the reunion host for more information.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIVIDER IMAGE ===== -->
+  <div class="section-divider" style="background-image: url('images/amish-farm.jpg');"></div>
+
+  <!-- ===== LODGING ===== -->
+  <section id="lodging" class="section">
+    <div class="container">
+      <h2>Lodging</h2>
+      <div id="lodging-content" class="card-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== GETTING THERE ===== -->
+  <section id="getting-there" class="section section-alt">
+    <div class="container">
+      <h2>Getting There</h2>
+      <div class="getting-there-layout">
+        <div id="directions-text" class="directions-text"></div>
+        <div id="map-container" class="map-container"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <div id="contact-content" class="card-grid"></div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="footer-year">2027</span> Wysong Family Assocation</p>
+    </div>
+  </footer>
+
+  <!-- ===== PRINT HEADER (only visible when printing) ===== -->
+  <div class="print-header">
+    <h1>Wysong Family Reunion <span id="print-year">2027</span></h1>
+    <p>Registration Form</p>
+  </div>
+
+  <script src="site-config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

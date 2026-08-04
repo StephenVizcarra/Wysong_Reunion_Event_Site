@@ -35,7 +35,7 @@ const SITE_CONFIG = {
   registrationDeadline: "June 15, 2027",
 
   // Who checks should be made payable to
-  checkPayableTo: "Bern Harris",
+  checkPayableTo: "B. H.",
 
   // Mailing address for checks and paper registration forms
   // Use \n for line breaks
@@ -148,7 +148,7 @@ const SITE_CONFIG = {
   // People attendees can reach out to with questions.
   contacts: [
     {
-      name: "Bern Harris",
+      name: "B. H.",
       role: "2027 Reunion Host",
       phone: "",
       email: ""
